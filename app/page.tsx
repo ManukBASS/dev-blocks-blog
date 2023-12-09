@@ -1,5 +1,3 @@
-import { Footer } from "@/components/Footer/Footer";
-import { Header } from "@/components/Header/Header";
 import { LatestPost } from "@/components/LatestPost/LatestPost";
 
 // Shadcn/ui components
@@ -7,24 +5,23 @@ import { Separator } from "@/components/ui/separator";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-col gap-10">
-      <Header />
-      <section className="flex flex-col gap-5">
+    <main className="flex flex-col gap-12 pt-12">
+      <section className="flex flex-col gap-10">
         <h1 className="font-bold text-3xl lg:text-5xl bg-gradient-to-r from-indigo-500 via-fuchsia-700 to-violet-400 inline-block text-transparent bg-clip-text">
           Dev Blocks
         </h1>
         <div>
-          <p className="opacity-80 text-sm leading-6">
+          <p className="opacity-80 text-sm leading-8">
             Welcome to Dev Blocks, a blog{" "}
             <span className="font-bold bg-gradient-to-r from-indigo-500 via-fuchsia-700 to-violet-400 inline-block text-transparent bg-clip-text">
               created by developers for developers.
             </span>{" "}
           </p>
-          <p className="opacity-80 text-sm leading-6">
+          <p className="opacity-80 text-sm leading-8">
             Where tech meets curiosity, Quick reads on web development, fun
             facts, and history.
           </p>
-          <p className="opacity-80 text-sm leading-6">
+          <p className="opacity-80 text-sm leading-8">
             Bite-sized insights for your daily tech cravings.
           </p>
         </div>
@@ -36,7 +33,6 @@ export default function HomePage() {
           <LatestPost />
         </section>
       </>
-      <Footer />
     </main>
   );
 }

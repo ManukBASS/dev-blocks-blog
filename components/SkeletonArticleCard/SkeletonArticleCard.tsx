@@ -13,7 +13,6 @@ export function SkeletonArticleCard() {
     <Card className="p-6 pt-8 flex flex-col gap-5 border-[.0625rem]">
       <CardHeader className="flex flex-row justify-between items-center relative">
         <Skeleton className="h-4 w-16 bg-gray-300 dark:bg-gray-700" />
-        <Skeleton className="h-4 w-6 bg-gray-300 dark:bg-gray-700" />
       </CardHeader>
       <CardContent className="flex flex-col gap-5">
         <CardTitle>

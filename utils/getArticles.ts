@@ -8,7 +8,7 @@ const fetcher = async (url: string) => {
 };
 
 export function useArticles() {
-  const { data, error } = useSWR(groq`*[_type=="article"]{...}`, fetcher);
+  const { data, error } = useSWR(groq`*[_type=="article"]`, fetcher);
 
   return {
     articles: data,

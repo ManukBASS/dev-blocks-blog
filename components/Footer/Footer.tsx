@@ -3,9 +3,9 @@ import { Separator } from "../ui/separator";
 
 export function Footer() {
   return (
-    <>
+    <footer className="py-8 flex flex-col gap-5">
       <Separator />
-      <footer className="flex flex-col md:flex-row gap-4 justify-between pb-12">
+      <div className="flex flex-col md:flex-row gap-4 justify-between">
         <div className="flex flex-col gap-3 w-96">
           <h2 className="font-bold bg-gradient-to-r from-indigo-500 via-fuchsia-700 to-violet-400 inline-block text-transparent bg-clip-text text-3xl lg:text-2xl animate-pulse">
             &copy; The Dev Notes 2023.
@@ -40,7 +40,7 @@ export function Footer() {
             </li>
           </ul>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 }

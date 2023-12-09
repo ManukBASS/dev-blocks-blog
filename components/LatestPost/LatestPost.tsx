@@ -7,6 +7,9 @@ import { ArticleCard } from "../ArticleCard/ArticleCard";
 import { useArticles } from "@/utils/getArticles";
 import { SkeletonArticleCard } from "../SkeletonArticleCard/SkeletonArticleCard";
 
+// Types
+import { ArticleTypes } from "@/types/article.types";
+
 export function LatestPost() {
   const { articles, isError, isLoading } = useArticles();
 
@@ -26,12 +29,13 @@ export function LatestPost() {
 
   return (
     <section className="grid grid-cols-1 gap-7">
-      {articles.map((article: any) => (
+      {articles.map((article: ArticleTypes) => (
         <div key={article._id}>
           <ArticleCard
             publishedAt={article.publishedAt}
             slug={article.slug}
             title={article.title}
+            description={article.description}
             author={article.author}
             author_image={article.author_image}
           />
