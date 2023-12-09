@@ -2,10 +2,10 @@
 
 // Custom components
 import { ArticleCard } from "../ArticleCard/ArticleCard";
+import { SkeletonArticleCard } from "../SkeletonArticleCard/SkeletonArticleCard";
 
 // Get articles
 import { useArticles } from "@/utils/getArticles";
-import { SkeletonArticleCard } from "../SkeletonArticleCard/SkeletonArticleCard";
 
 // Types
 import { ArticleTypes } from "@/types/article.types";

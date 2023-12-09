@@ -30,7 +30,10 @@ export function ArticleCard({
   const formattedDate = originalDate.toLocaleDateString();
 
   return (
-    <Link href={`/article/${slug?.current}`} className="cursor-default">
+    <Link
+      href={`/article/${slug?.current}`}
+      className="cursor-default [animation:linear_reveal_both]"
+    >
       <Card className="px-6 py-2 flex flex-col gap-5 group hover:-translate-y-2 hover:border-purple-600 border-[.0625rem] transition-[border, translate] duration-100">
         <CardHeader className="flex flex-row justify-between items-center relative">
           <p className="text-xs">{formattedDate}</p>

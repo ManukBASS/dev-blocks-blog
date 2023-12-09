@@ -34,7 +34,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="container md:px-40 lg:px-64 xl:px-72">
+          <div className="container md:px-40 lg:px-64 xl:px-72 [animation:linear_reveal_both] [animation-range:entry_5%_cover_30%] [animation-timeline:view()]">
             <Header />
             {children}
             <Footer />
