@@ -1,4 +1,4 @@
-export type PostCardTypes = {
+export type ArticleCardTypes = {
   title?: string;
   description?: string;
   author?: string;

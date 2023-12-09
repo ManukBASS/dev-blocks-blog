@@ -2,16 +2,22 @@
 
 // Custom components
 import { ArticleCard } from "../ArticleCard/ArticleCard";
-import { Spinner } from "../Spinner/Spinner";
 
 // Get articles
 import { useArticles } from "@/utils/getArticles";
+import { SkeletonArticleCard } from "../SkeletonArticleCard/SkeletonArticleCard";
 
 export function LatestPost() {
   const { articles, isError, isLoading } = useArticles();
 
   if (isLoading) {
-    return <Spinner />;
+    return (
+      <section className="grid grid-cols-1 gap-7">
+        <SkeletonArticleCard />
+        <SkeletonArticleCard />
+        <SkeletonArticleCard />
+      </section>
+    );
   }
 
   if (isError) {
@@ -26,7 +32,6 @@ export function LatestPost() {
             publishedAt={article.publishedAt}
             slug={article.slug}
             title={article.title}
-            // description={article.description}
             author={article.author}
             author_image={article.author_image}
           />

@@ -1,16 +1,30 @@
+// useArticlesSlug.ts
 import { groq } from "next-sanity";
+import useSWR from "swr";
 import { client } from "../sanity/lib/client";
 
-export async function useArticlesSlug(slug: string) {
-  const data = await client.fetch(
-    groq`*[_type=="article" && slug.current== $slug ][0]{
+const fetchArticleData = async (slug: string) => {
+  const result = await client.fetch(
+    groq`
+      *[_type == "article" && slug.current == $slug][0]{
         ...,
-        "mainImage":mainImage.asset->url,
+        "mainImage": mainImage.asset->url,
         author->,
         categories[]->
-    }`,
+      }`,
     { slug }
   );
+  return result;
+};
 
-  return data;
+export function useArticlesSlug(slug: string) {
+  const { data, error } = useSWR(slug, () => fetchArticleData(slug), {
+    revalidateOnFocus: true,
+  });
+
+  return {
+    article: data,
+    isLoading: !error && !data,
+    isError: error,
+  };
 }

@@ -9,7 +9,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 
 // Icons
-import { ComputerIcon, MessageSquare } from "lucide-react";
+import { FileText, MessageSquare } from "lucide-react";
 
 export function Header() {
   return (
@@ -26,23 +26,29 @@ export function Header() {
           <ul className="flex flex-col gap-6 w-screen items-center md:w-full md:flex-row md:min-h-0 border rounded-full px-12 py-2">
             <li className="hover:opacity-70 duration-100 ease-out transition-opacity">
               <Link
-                href="/all-articles"
-                className="cursor-default flex items-center gap-3"
+                href="/integrants"
+                className="cursor-default flex items-center gap-1"
               >
-                <Button variant="ghost" className="flex gap-1 cursor-default">
+                <Button
+                  variant="ghost"
+                  className="flex gap-2 hover:bg-fuchsia-900 hover:text-black"
+                >
                   <MessageSquare size=".75rem" />
-                  Articles
+                  Posts
                 </Button>
               </Link>
             </li>
             <li className="hover:opacity-70 duration-100 ease-out transition-opacity">
               <Link
-                href="/integrants"
-                className="cursor-default flex items-center gap-1"
+                href="/all-articles"
+                className="cursor-default flex items-center gap-3"
               >
-                <Button variant="ghost" className="flex gap-2 cursor-default">
-                  <ComputerIcon size=".75rem" />
-                  Developers
+                <Button
+                  variant="ghost"
+                  className="flex gap-1 hover:bg-violet-900 hover:text-black"
+                >
+                  <FileText size=".75rem" />
+                  Articles
                 </Button>
               </Link>
             </li>

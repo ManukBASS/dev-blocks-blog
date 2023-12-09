@@ -1,4 +1,3 @@
-// Shadcn/ui components
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -8,13 +7,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Badge } from "../ui/badge";
+
+// Icon
+import { LogOut } from "lucide-react";
 
 // Next imports
 import Link from "next/link";
 
 // Types
-import { Badge } from "../ui/badge";
-import { PostCardTypes } from "./Article.types";
+import { ArticleCardTypes } from "./Article.types";
 
 export function ArticleCard({
   author,
@@ -23,21 +25,21 @@ export function ArticleCard({
   title,
   publishedAt,
   slug,
-}: PostCardTypes) {
+}: ArticleCardTypes) {
   const originalDate = new Date(publishedAt);
   const formattedDate = originalDate.toLocaleDateString();
 
   return (
     <Link href={`/article/${slug?.current}`} className="cursor-default">
-      <Card
-        className="p-6 pt-8 flex flex-col gap-5 hover:opacity-70 hover:scale-105 
-        border-purple-600 border-[.0625rem] transition-[scale, opacity] duration-100"
-      >
-        <CardHeader className="flex flex-row items-center">
+      <Card className="p-6 pt-8 flex flex-col gap-5 group hover:-translate-y-2 hover:border-purple-600 border-[.0625rem] transition-[border, translate] duration-100">
+        <CardHeader className="flex flex-row justify-between items-center relative">
           <p className="text-xs">{formattedDate}</p>
+          <LogOut className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
         </CardHeader>
         <CardContent className="flex flex-col gap-5">
-          <CardTitle>{title}</CardTitle>
+          <CardTitle className="group-hover:bg-gradient-to-r group-hover:from-indigo-500 group-hover:via-fuchsia-700 group-hover:to-violet-400 group-hover:inline-block group-hover:text-transparent group-hover:bg-clip-text">
+            {title}
+          </CardTitle>
           <CardDescription>{description}</CardDescription>
         </CardContent>
 
