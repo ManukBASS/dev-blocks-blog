@@ -8,11 +8,15 @@ import { jetbrains } from "../font/jetbrains";
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 
+// ProgressBar Component
+import TopLoader from "nextjs-toploader";
+
 // Global styles
 import "./globals.css";
 
 // Metadata
 import type { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
   title: "DevBlocks",
@@ -35,6 +39,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="container md:px-40 lg:px-64 xl:px-72 [animation:linear_reveal_both] [animation-range:entry_5%_cover_30%] [animation-timeline:view()]">
+            <NextTopLoader color="#6d28d9" />
             <Header />
             {children}
             <Footer />
